@@ -4,7 +4,7 @@ import pandas as pd
 # ==========================================
 # CONFIGURATION
 # ==========================================
-api_key = "DDOSUavdwzi9UFHa"  # <--- PASTE YOUR KEY HERE
+api_key = "api-key"  # <--- PASTE YOUR KEY HERE
 
 # CHANGE: We use the 'topscorer' endpoint instead of 'player'
 # This allows us to get data by League, without needing a Team ID
