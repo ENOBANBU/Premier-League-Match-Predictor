@@ -17,8 +17,8 @@ print("Fetching Top Scorers...")
 
 params = {
     "api_key": api_key,
-    "leagueId": "8",  # Premier League
-    "seasonId": "1708", # 23/24 Season
+    "leagueId": "1639",  # Premier League
+    "seasonId": "5555", # 23/24 Season
 }
 
 try:
