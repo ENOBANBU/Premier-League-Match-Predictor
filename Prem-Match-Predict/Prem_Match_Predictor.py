@@ -144,6 +144,90 @@ try:
 
         teamTwo = input("Enter Team 2 Name: ")
         
+        # We repeat the same process for Team 2, but we can optimize this by creating a mapping of team names to IDs instead of using multiple if-elif statements. For now, we'll keep it simple and use the same structure.
+        if teamTwo == df['Arsenal']:
+            print("fetching data for Arsenal")
+            team_id = 19
+            calculate_form(team_id, df)
+        elif teamTwo == df['AFC Bournemouth']:
+            print("fetching data for AFC Bournemouth")
+            team_id = 348    
+            calculate_form(team_id, df)
+        elif teamTwo == df['Aston Villa']:      
+            print("fetching data for Aston Villa")
+            team_id = 20    
+            calculate_form(team_id, df)
+        elif teamTwo == df['Brentford']:
+            print("fetching data for Brentford")
+            team_id = 365    
+            calculate_form(team_id, df)
+        elif teamTwo == df['Brighton & Hove Albion']:
+            print("fetching data for Brighton & Hove Albion")
+            team_id = 60    
+            calculate_form(team_id, df)
+        elif teamTwo == df['Burnley']:
+            print("fetching data for Burnley")
+            team_id = 46    
+            calculate_form(team_id, df)
+        elif teamTwo == df['Chelsea']:
+            print("fetching data for Chelsea")
+            team_id = 24    
+            calculate_form(team_id, df)
+        elif teamTwo == df['Crystal Palace']:
+            print("fetching data for Crystal Palace")
+            team_id = 35    
+            calculate_form(team_id, df)
+        elif teamTwo == df['Everton']:
+            print("fetching data for Everton")
+            team_id = 31    
+            calculate_form(team_id, df)
+        elif teamTwo == df['Fulham']:
+            print("fetching data for Fulham")
+            team_id = 29    
+            calculate_form(team_id, df)
+        elif teamTwo == df['Leeds United']:
+            print("fetching data for Leeds United")
+            team_id = 56    
+            calculate_form(team_id, df)
+        elif teamTwo == df['Liverpool']:
+            print("fetching data for Liverpool")
+            team_id = 25    
+            calculate_form(team_id, df) 
+        elif teamTwo == df['Manchester City']:
+            print("fetching data for Manchester City")
+            team_id = 26    
+            calculate_form(team_id, df)
+        elif teamTwo == df['Manchester United']:
+            print("fetching data for Manchester United")
+            team_id = 27    
+            calculate_form(team_id, df)
+        elif teamTwo == df['Newcastle United']: 
+            print("fetching data for Newcastle United")
+            team_id = 28    
+            calculate_form(team_id, df)
+        elif teamTwo == df['Nottingham Forest']:
+            print("fetching data for Nottingham Forest")
+            team_id = 49    
+            calculate_form(team_id, df)
+        elif teamTwo == df['Sunderland A.F.C']:
+            print("fetching data for Sunderland A.F.C")
+            team_id = 65    
+            calculate_form(team_id, df)
+        elif teamTwo == df['Tottenham']:
+            print("fetching data for Tottenham")
+            team_id = 33
+            calculate_form(team_id, df)
+        elif teamTwo == df['West Ham United']:
+            print("fetching data for West Ham United")
+            team_id = 62    
+            calculate_form(team_id, df)
+        elif teamTwo == df['Wolverhampton Wanderers']:
+            print("fetching data for Wolverhampton Wanderers")
+            team_id = 52    
+            calculate_form(team_id, df)
+        else:
+            print("Team not found. Please check the name and try again.")
+
         # Show the data
         if not df.empty:
             # Select clean columns
