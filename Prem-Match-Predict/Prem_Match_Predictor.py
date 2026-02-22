@@ -4,7 +4,7 @@ import pandas as pd
 # ==========================================
 # CONFIGURATION
 # ==========================================
-api_key = "api_key"  # <--- PASTE YOUR KEY HERE
+api_key = "DDOSUavdwzi9UFHa"  # <--- PASTE YOUR KEY HERE
 
 # CHANGE: We use the 'topscorer' endpoint instead of 'player'
 # This allows us to get data by League, without needing a Team ID
@@ -18,7 +18,7 @@ print("Fetching Match Results...")
 params = {
     "api_key": api_key,
     "leagueId": "1639",  # Premier League
-    "seasonId": "5555", # 23/24 Season
+    "seasonId": "5555", # 25/26 Season
 } 
 
 try:
@@ -34,10 +34,7 @@ try:
         df=df[df['status'] == 'Finished']
         df=df.sort_values("matchTime",ascending=False)
 
-        teamOne = input("Enter Team 1 Name: ")
-        if teamOne == df['Arsenal']:
-            print("fetching data for Arsenal")
-            team_id = 19
+        # Function to calculate form (points and goal difference) for a team based on recent matches
         def calculate_form(team_id, matches):
             points = 0
             gd = 0
@@ -58,17 +55,95 @@ try:
                 gd += (scored - conceded)
 
             return points, gd
+
+        teamOne = input("Enter Team 1 Name: ")
+
+        # We check the team name against the DataFrame to find the corresponding team ID. This is a bit clunky, but it works for now. We can optimize this later by creating a mapping of team names to IDs.
+        if teamOne == df['Arsenal'].iloc[0]:
+            print("fetching data for Arsenal")
+            team_id = 19
+            calculate_form(team_id, df)
+        elif teamOne == df['AFC Bournemouth'].iloc[0]:
+            print("fetching data for AFC Bournemouth")
+            team_id = 348    
+            calculate_form(team_id, df)
+        elif teamOne == df['Aston Villa'].iloc[0]:      
+            print("fetching data for Aston Villa")
+            team_id = 20    
+            calculate_form(team_id, df)
+        elif teamOne == df['Brentford'].iloc[0]:
+            print("fetching data for Brentford")
+            team_id = 365    
+            calculate_form(team_id, df)
+        elif teamOne == df['Brighton & Hove Albion'].iloc[0]:
+            print("fetching data for Brighton & Hove Albion")
+            team_id = 60    
+            calculate_form(team_id, df)
+        elif teamOne == df['Burnley'].iloc[0]:
+            print("fetching data for Burnley")
+            team_id = 46    
+            calculate_form(team_id, df)
+        elif teamOne == df['Chelsea'].iloc[0]:
+            print("fetching data for Chelsea")
+            team_id = 24    
+            calculate_form(team_id, df)
+        elif teamOne == df['Crystal Palace']:
+            print("fetching data for Crystal Palace")
+            team_id = 35    
+            calculate_form(team_id, df)
+        elif teamOne == df['Everton']:
+            print("fetching data for Everton")
+            team_id = 31    
+            calculate_form(team_id, df)
+        elif teamOne == df['Fulham']:
+            print("fetching data for Fulham")
+            team_id = 29    
+            calculate_form(team_id, df)
+        elif teamOne == df['Leeds United']:
+            print("fetching data for Leeds United")
+            team_id = 56    
+            calculate_form(team_id, df)
+        elif teamOne == df['Liverpool']:
+            print("fetching data for Liverpool")
+            team_id = 25    
+            calculate_form(team_id, df) 
+        elif teamOne == df['Manchester City']:
+            print("fetching data for Manchester City")
+            team_id = 26    
+            calculate_form(team_id, df)
+        elif teamOne == df['Manchester United']:
+            print("fetching data for Manchester United")
+            team_id = 27    
+            calculate_form(team_id, df)
+        elif teamOne == df['Newcastle United']: 
+            print("fetching data for Newcastle United")
+            team_id = 28    
+            calculate_form(team_id, df)
+        elif teamOne == df['Nottingham Forest']:
+            print("fetching data for Nottingham Forest")
+            team_id = 49    
+            calculate_form(team_id, df)
+        elif teamOne == df['Sunderland A.F.C']:
+            print("fetching data for Sunderland A.F.C")
+            team_id = 65    
+            calculate_form(team_id, df)
+        elif teamOne == df['Tottenham']:
+            print("fetching data for Tottenham")
+            team_id = 33
+            calculate_form(team_id, df)
+        elif teamOne == df['West Ham United']:
+            print("fetching data for West Ham United")
+            team_id = 62    
+            calculate_form(team_id, df)
+        elif teamOne == df['Wolverhampton Wanderers']:
+            print("fetching data for Wolverhampton Wanderers")
+            team_id = 52    
+            calculate_form(team_id, df)
+        else:
+            print("Team not found. Please check the name and try again.")
+
+        teamTwo = input("Enter Team 2 Name: ")
         
-
-
-
-
-        #teamTwo = input("Enter Team 2 Name: ")
-
-
-
-
-
         # Show the data
         if not df.empty:
             # Select clean columns
