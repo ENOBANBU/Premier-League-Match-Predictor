@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  scraper:
+    build: .
+    volumes:
+      # This is the key line!
+      # It maps your current folder (.) to the container folder (/app)
+      # So when the script saves a CSV, it appears on your laptop.
+      - .:/app
